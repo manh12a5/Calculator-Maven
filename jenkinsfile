@@ -10,8 +10,6 @@ pipeline {
             steps {
                 git 'https://github.com/manh12a5/Calculator-Maven.git'
 //                 sh 'mvn clean'
-                    echo 'PATH = C:\Program Files\apache-maven-3.6.3\bin'
-                    echo 'M2_HOME = C:\Program Files\apache-maven-3.6.3'
                 bat 'mvn clean'
             }
         }
