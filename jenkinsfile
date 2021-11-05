@@ -5,19 +5,19 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/manh12a5/Calculator-Maven.git'
-                sh './mvnw clean compile'
+                sh 'mvn clean'
                 // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh './mvnw test'
+                sh 'mvn test'
                 // bat '.\\mvnw test'
             }
 
             post {
                 always {
-                    junit '**/target/surefire-reports/TEST-*.xml'
+                    junit '**/target/surefire-reports/*.xml'
                 }
             }
         }
