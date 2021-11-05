@@ -40,7 +40,7 @@ public class BasicTest {
         String leftNumber = "2";
         String rightNumber = "2";
         String operator = "*";
-        double result = 5;
+        double result = 4;
         assertEquals(calculator.calculateResult(leftNumber, rightNumber, operator), result);
     }
 
