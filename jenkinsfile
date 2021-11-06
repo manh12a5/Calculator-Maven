@@ -1,36 +1,26 @@
 pipeline {
     agent any
-//         tools {
-//             maven 'Maven 3.6.3'
-//             jdk 'jdk8'
-//         }
-
+        tools {
+            maven 'Maven 3.6.3'
+            jdk 'JDK8'
+        }
     stages {
-        stage ('Initialize') {
-            steps {
-                echo 'PATH = ${M2_HOME}/bin:${PATH}'
-                echo 'M2_HOME = /opt/maven'
+        stage('Initialize'){
+            steps{
+                echo "PATH = ${M2_HOME}/bin:${PATH}"
+                echo "M2_HOME = /opt/maven"
             }
         }
-
-    stages {
         stage('Build') {
             steps {
-                git 'https://github.com/manh12a5/Calculator-Maven.git'
-                sh 'mvn clean'
-//                 bat 'mvn clean'
+                 git 'https://github.com/manh12a5/Calculator-Maven.git'
+                 sh 'mvn clean'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-//                 bat 'mvn test'
-            }
-
-            post {
-                always {
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
-        }
-    }
+     }
+    post {
+       always {
+          junit '**/target/surefire-reports/*.xml'
+      }
+   }
+}
