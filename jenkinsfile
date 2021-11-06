@@ -14,12 +14,12 @@ pipeline {
         stage('Build') {
             steps {
                  git 'https://github.com/manh12a5/Calculator-Maven.git'
-                 sh 'mvn clean'
+                 bat 'mvn clean'
             }
         }
         stage ('Testing Stage') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
      }
