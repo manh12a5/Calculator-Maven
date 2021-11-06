@@ -14,13 +14,16 @@ pipeline {
         stage('Build') {
             steps {
                  git 'https://github.com/manh12a5/Calculator-Maven.git'
-                 sh 'mvn clean'
+                 sh 'mvn -B -DskipTests clean package'
             }
         }
      }
     post {
        always {
-          junit '**/target/surefire-reports/*.xml'
+           junit(
+                allowEmptyResults: true,
+                testResults: '*/test-reports/.xml'
+                )
       }
    }
 }
