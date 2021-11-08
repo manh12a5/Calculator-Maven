@@ -4,6 +4,7 @@ pipeline {
             maven 'Maven 3.6.3'
             jdk 'JDK8'
         }
+
     stages {
 //         stage('Initialize') {
 //             steps {
