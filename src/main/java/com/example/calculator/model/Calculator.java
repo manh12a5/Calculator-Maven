@@ -1,44 +1,16 @@
 package com.example.calculator.model;
 
+import lombok.*;
+
 import java.util.regex.Pattern;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Calculator {
     private String leftNumber;
     private String rightNumber;
     private String operator;
-
-    public Calculator() {
-    }
-
-    public Calculator(String leftNumber, String rightNumber, String operator) {
-        this.leftNumber = leftNumber;
-        this.rightNumber = rightNumber;
-        this.operator = operator;
-    }
-
-    public String getLeftNumber() {
-        return leftNumber;
-    }
-
-    public void setLeftNumber(String leftNumber) {
-        this.leftNumber = leftNumber;
-    }
-
-    public String getRightNumber() {
-        return rightNumber;
-    }
-
-    public void setRightNumber(String rightNumber) {
-        this.rightNumber = rightNumber;
-    }
-
-    public String getOperator() {
-        return operator;
-    }
-
-    public void setOperator(String operator) {
-        this.operator = operator;
-    }
 
     public double calculateResult(String leftNumber, String rightNumber, String operator) {
         double result = 0;
