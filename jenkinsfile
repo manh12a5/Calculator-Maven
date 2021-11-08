@@ -5,21 +5,21 @@ pipeline {
             jdk 'JDK8'
         }
     stages {
-        stage('Initialize') {
-            steps {
-//                 echo "PATH = ${M2_HOME}/bin:${PATH}"
-//                 echo "M2_HOME = /opt/maven"
-                echo "PATH = ${PATH}"
-                echo "M2_HOME = ${M2_HOME}"
-            }
-        }
+//         stage('Initialize') {
+//             steps {
+// //                 echo "PATH = ${M2_HOME}/bin:${PATH}"
+// //                 echo "M2_HOME = /opt/maven"
+//                 echo "PATH = ${PATH}"
+//                 echo "M2_HOME = ${M2_HOME}"
+//             }
+//         }
         stage('Build') {
             steps {
                  git 'https://github.com/manh12a5/Calculator-Maven.git'
                  bat 'mvn clean'
             }
         }
-        stage ('Testing Stage') {
+        stage ('Test') {
             steps {
                 bat 'mvn test'
             }
